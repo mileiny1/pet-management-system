@@ -1,0 +1,64 @@
+<%- include('../partials/header') %>
+
+<div class="row mt-5">
+    <div class="col-md-8 m-auto">
+        <div class="card card-body">
+            <h1 class="text-center mb-3">
+                <i class="fas fa-utensils"></i> Add Food Log for <%= pet.name %>
+            </h1>
+            <form action="/food-logs/add/<%= pet._id %>" method="POST">
+                <div class="mb-3">
+                    <label for="foodType" class="form-label">Food Type</label>
+                    <input
+                        type="text"
+                        id="foodType"
+                        name="foodType"
+                        class="form-control"
+                        placeholder="E.g. Dry kibble, wet food, treats"
+                        required
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="feedingTime" class="form-label">Feeding Time</label>
+                    <input
+                        type="datetime-local"
+                        id="feedingTime"
+                        name="feedingTime"
+                        class="form-control"
+                        value="<%= new Date().toISOString().slice(0, 16) %>"
+                        required
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="portionSize" class="form-label">Portion Size</label>
+                    <input
+                        type="text"
+                        id="portionSize"
+                        name="portionSize"
+                        class="form-control"
+                        placeholder="E.g. 1 cup, 100 grams"
+                        required
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="additionalNotes" class="form-label">Additional Notes</label>
+                    <textarea
+                        id="additionalNotes"
+                        name="additionalNotes"
+                        class="form-control"
+                        placeholder="Any additional information about this feeding"
+                        rows="3"
+                    ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    Add Food Log
+                </button>
+            </form>
+            <div class="mt-4">
+                <a href="/pets/<%= pet._id %>" class="btn btn-secondary">Back to Pet Details</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

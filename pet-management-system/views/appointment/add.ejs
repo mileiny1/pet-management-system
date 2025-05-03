@@ -1,0 +1,62 @@
+<%- include('../partials/header') %>
+
+<div class="row mt-5">
+    <div class="col-md-8 m-auto">
+        <div class="card card-body">
+            <h1 class="text-center mb-3">
+                <i class="fas fa-calendar-alt"></i> Add Appointment for <%= pet.name %>
+            </h1>
+            <form action="/appointments/add/<%= pet._id %>" method="POST">
+                <div class="mb-3">
+                    <label for="appointmentDate" class="form-label">Appointment Date & Time</label>
+                    <input
+                        type="datetime-local"
+                        id="appointmentDate"
+                        name="appointmentDate"
+                        class="form-control"
+                        required
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="appointmentType" class="form-label">Appointment Type</label>
+                    <input
+                        type="text"
+                        id="appointmentType"
+                        name="appointmentType"
+                        class="form-control"
+                        placeholder="E.g. Vet checkup, Grooming, Training"
+                        required
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="reminderTime" class="form-label">Reminder Time (Optional)</label>
+                    <input
+                        type="datetime-local"
+                        id="reminderTime"
+                        name="reminderTime"
+                        class="form-control"
+                    />
+                    <small class="form-text text-muted">When would you like to be reminded about this appointment?</small>
+                </div>
+                <div class="mb-3">
+                    <label for="notes" class="form-label">Notes</label>
+                    <textarea
+                        id="notes"
+                        name="notes"
+                        class="form-control"
+                        placeholder="Any additional notes about this appointment"
+                        rows="3"
+                    ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    Add Appointment
+                </button>
+            </form>
+            <div class="mt-4">
+                <a href="/pets/<%= pet._id %>" class="btn btn-secondary">Back to Pet Details</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

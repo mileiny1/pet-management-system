@@ -1,0 +1,108 @@
+/* Custom styles for Pet Management System */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    }
+    
+    .navbar-brand {
+    font-weight: bold;
+    }
+    
+    footer {
+    margin-top: auto;
+    }
+    
+    .card {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    }
+    
+    .btn {
+    border-radius: 0.25rem;
+    }
+    
+    .btn-block {
+    display: block;
+    width: 100%;
+    }
+    
+    .tab-content {
+    padding: 20px 0;
+    }
+    
+    .table th {
+    font-weight: 600;
+    }
+    
+    /* Animal icons on dashboard */
+    .pet-icon {
+    font-size: 2rem;
+    color: #6c757d;
+    }
+    
+    /* Custom colors for pet types */
+    .pet-dog {
+    border-top: 3px solid #28a745;
+    }
+    
+    .pet-cat {
+    border-top: 3px solid #fd7e14;
+    }
+    
+    .pet-other {
+    border-top: 3px solid #6610f2;
+    }
+    
+    /* Form styling */
+    .form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+    }
+    
+    /* Pet details page */
+    .pet-img-container {
+    max-height: 300px;
+    overflow: hidden;
+    }
+    
+    .pet-img-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    }
+    
+    /* Responsive tables */
+    @media (max-width: 767.98px) {
+    .table-responsive-sm td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    }
+    
+    .table-responsive-sm thead {
+    display: none;
+    }
+    
+    .table-responsive-sm tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    }
+    
+    .table-responsive-sm td {
+    display: block;
+    text-align: right;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    }
+    }
+    
+    

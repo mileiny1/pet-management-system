@@ -1,0 +1,84 @@
+<%- include('../partials/header') %>
+
+<div class="row mt-5">
+    <div class="col-md-8 m-auto">
+        <div class="card card-body">
+            <h1 class="text-center mb-3">
+                <i class="fas fa-stethoscope"></i> Add Vet Visit for <%= pet.name %>
+            </h1>
+            <form action="/vet-visits/add/<%= pet._id %>" method="POST">
+                <div class="mb-3">
+                    <label for="visitDate" class="form-label">Visit Date</label>
+                    <input
+                        type="date"
+                        id="visitDate"
+                        name="visitDate"
+                        class="form-control"
+                        value="<%= new Date().toISOString().slice(0, 10) %>"
+                        required
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="vetName" class="form-label">Vet Name</label>
+                    <input
+                        type="text"
+                        id="vetName"
+                        name="vetName"
+                        class="form-control"
+                        placeholder="Enter vet's name"
+                        required
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="reasonForVisit" class="form-label">Reason for Visit</label>
+                    <input
+                        type="text"
+                        id="reasonForVisit"
+                        name="reasonForVisit"
+                        class="form-control"
+                        placeholder="E.g. Annual checkup, vaccination, illness"
+                        required
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="treatmentGiven" class="form-label">Treatment Given</label>
+                    <textarea
+                        id="treatmentGiven"
+                        name="treatmentGiven"
+                        class="form-control"
+                        placeholder="Details of any treatment or prescription given"
+                        rows="3"
+                    ></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="petBriidBreed" class="form-label">Pet BRID/Breed Notes</label>
+                    <input
+                        type="text"
+                        id="petBriidBreed"
+                        name="petBriidBreed"
+                        class="form-control"
+                        placeholder="Any breed-specific notes from the vet"
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="additionalNotes" class="form-label">Additional Notes</label>
+                    <textarea
+                        id="additionalNotes"
+                        name="additionalNotes"
+                        class="form-control"
+                        placeholder="Any additional information about this visit"
+                        rows="3"
+                    ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    Add Vet Visit
+                </button>
+            </form>
+            <div class="mt-4">
+                <a href="/pets/<%= pet._id %>" class="btn btn-secondary">Back to Pet Details</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

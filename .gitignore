@@ -1,0 +1,18 @@
+# dependencies
+node_modules/
+
+# environment variables
+.env
+
+# logs
+logs
+*.log
+npm-debug.log*
+
+# uploads folder content (but keep the folder)
+public/uploads/*
+!public/uploads/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db
