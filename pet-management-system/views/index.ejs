@@ -1,0 +1,47 @@
+<%- include('partials/header') %>
+
+<div class="row mt-5">
+    <div class="col-md-6 m-auto text-center">
+        <h1 class="display-4 mb-4">
+            <i class="fas fa-paw"></i> Pet Management System
+        </h1>
+        <p class="lead">Keep track of your pets' health, food, appointments, medications, and more</p>
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <a href="/register" class="btn btn-primary btn-block mb-2">Register</a>
+            </div>
+            <div class="col-md-6">
+                <a href="/login" class="btn btn-secondary btn-block">Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-clipboard-list"></i> Track Pet Information</h5>
+                <p class="card-text">Store important information about your pets including breed, weight, and special needs.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-calendar-alt"></i> Manage Appointments</h5>
+                <p class="card-text">Schedule and keep track of vet visits, grooming, and other appointments for your pets.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><i class="fas fa-pills"></i> Monitor Medications</h5>
+                <p class="card-text">Easily manage your pets' medications, dosages, and schedules.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

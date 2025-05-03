@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+
+<h1 class="mb-4">Welcome <%= user.username %></h1>
+<p class="lead">Manage your pets and their information</p>
+
+<div class="row mb-4">
+    <div class="col">
+        <a href="/pets/add" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Add New Pet
+        </a>
+    </div>
+</div>
+
+<% if(pets.length > 0) { %>
+    <div class="row">
+        <% pets.forEach(pet => { %>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="/uploads/<%= pet.picture %>" class="card-img-top" alt="<%= pet.name %>" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= pet.name %></h5>
+                        <p class="card-text">
+                            <strong>Species:</strong> <%= pet.species.charAt(0).toUpperCase() + pet.species.slice(1) %><br>
+                            <strong>Breed:</strong> <%= pet.breed %><br>
+                            <% if(pet.weight) { %>
+                                <strong>Weight:</strong> <%= pet.weight %> kg<br>
+                            <% } %>
+                        </p>
+                        <a href="/pets/<%= pet._id %>" class="btn btn-info">View Details</a>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+<% } else { %>
+    <div class="alert alert-info">
+        <p class="mb-0">You don't have any pets yet. Click "Add New Pet" to get started!</p>
+    </div>
+<% } %>
+
+<%- include('partials/footer') %>
