@@ -23,3 +23,4 @@ router.get('/:petId', isAuthenticated, foodLogController.getFoodLogs);
 // @access Private
 router.delete('/:id', isAuthenticated, foodLogController.deleteFoodLog);
 
+module.exports = router;
